@@ -1,0 +1,606 @@
+/* ==========================================================================
+   JUHR — Journal of Undergraduate Horticultural Research
+   Stylesheet for the static GitHub Pages site.
+
+   Palette:
+     deep green  #1d5c39   (primary, masthead, buttons)
+     dark green  #14422a   (hover states)
+     dark blue   #1f3a5f   (navigation, links)
+     light gray  #f4f5f3   (page sections, sidebar boxes)
+   ========================================================================== */
+
+:root {
+  --green: #1d5c39;
+  --green-dark: #14422a;
+  --navy: #1f3a5f;
+  --navy-dark: #16294a;
+  --ink: #222222;
+  --muted: #5a5f5a;
+  --gray: #f4f5f3;
+  --border: #d9ddd9;
+  --white: #ffffff;
+  --serif: Georgia, "Times New Roman", "Noto Serif", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--white);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  line-height: 1.3;
+  color: var(--ink);
+}
+
+a { color: var(--navy); }
+a:hover { color: var(--green); }
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   Masthead
+   -------------------------------------------------------------------------- */
+
+.masthead {
+  background: var(--green);
+  color: var(--white);
+  padding: 1.75rem 0 1.5rem;
+  border-bottom: 4px solid var(--green-dark);
+}
+
+.masthead a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.journal-name {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.9rem;
+  font-weight: bold;
+  letter-spacing: 0.01em;
+}
+
+.journal-meta {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+/* --------------------------------------------------------------------------
+   Navigation (sticky below masthead)
+   -------------------------------------------------------------------------- */
+
+.site-nav {
+  background: var(--navy);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+  color: var(--white);
+  font-size: 1rem;
+  padding: 0.4rem 0.8rem;
+  margin: 0.5rem 0;
+  cursor: pointer;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.nav-menu a {
+  display: block;
+  padding: 0.7rem 0.85rem;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  background: var(--navy-dark);
+  color: var(--white);
+}
+
+.nav-submit {
+  margin-left: auto;
+}
+
+.nav-submit a {
+  background: var(--green);
+  font-weight: bold;
+}
+
+.nav-submit a:hover {
+  background: var(--green-dark);
+}
+
+/* --------------------------------------------------------------------------
+   Page layout
+   -------------------------------------------------------------------------- */
+
+.page {
+  padding: 2.25rem 0 3rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 2.5rem;
+}
+
+.page-title {
+  font-size: 1.8rem;
+  margin: 0 0 0.5rem;
+  border-bottom: 2px solid var(--green);
+  padding-bottom: 0.5rem;
+}
+
+.section-title {
+  font-size: 1.35rem;
+  margin: 2.2rem 0 0.8rem;
+  color: var(--green-dark);
+}
+
+.lead {
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+/* --------------------------------------------------------------------------
+   Sidebar
+   -------------------------------------------------------------------------- */
+
+.sidebar-box {
+  background: var(--gray);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--green);
+  padding: 1.1rem 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-box h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1.05rem;
+}
+
+.sidebar-box ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.92rem;
+}
+
+.sidebar-box li { margin-bottom: 0.35rem; }
+
+.fact-list {
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.fact-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border-bottom: 1px dotted var(--border);
+  padding: 0.3rem 0;
+}
+
+.fact-list .label { color: var(--muted); }
+
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
+
+.btn {
+  display: inline-block;
+  padding: 0.55rem 1.2rem;
+  border: 1px solid var(--navy);
+  border-radius: 3px;
+  background: var(--white);
+  color: var(--navy);
+  text-decoration: none;
+  font-size: 0.92rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--gray);
+  color: var(--navy-dark);
+}
+
+.btn-primary {
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: var(--green-dark);
+  border-color: var(--green-dark);
+  color: var(--white);
+}
+
+.btn-block {
+  display: block;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   Table of contents (article listings)
+   -------------------------------------------------------------------------- */
+
+.issue-heading {
+  font-size: 1.3rem;
+  margin: 1.5rem 0 0.4rem;
+}
+
+.toc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.toc-item {
+  border-bottom: 1px solid var(--border);
+  padding: 1.1rem 0;
+}
+
+.article-type {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--navy);
+  padding: 0.15rem 0.55rem;
+  border-radius: 2px;
+  margin-bottom: 0.4rem;
+}
+
+.toc-item h3,
+.toc-item h2 {
+  margin: 0.15rem 0 0.3rem;
+  font-size: 1.12rem;
+}
+
+.toc-item h3 a,
+.toc-item h2 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.toc-item h3 a:hover,
+.toc-item h2 a:hover {
+  color: var(--green);
+  text-decoration: underline;
+}
+
+.toc-authors {
+  margin: 0 0 0.25rem;
+  font-size: 0.92rem;
+}
+
+.toc-meta {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.toc-links a {
+  font-size: 0.88rem;
+  margin-right: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   Search and filters
+   -------------------------------------------------------------------------- */
+
+.search-box {
+  width: 100%;
+  max-width: 420px;
+  padding: 0.55rem 0.8rem;
+  font-size: 0.95rem;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  margin: 0.75rem 0 1rem;
+}
+
+.search-box:focus {
+  outline: 2px solid var(--green);
+  border-color: var(--green);
+}
+
+.filter-bar {
+  margin: 1rem 0 1.5rem;
+}
+
+.filter-bar button {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.4rem 1rem;
+  margin-right: 0.4rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: var(--ink);
+}
+
+.filter-bar button:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.filter-bar button.active {
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--white);
+}
+
+.no-results {
+  display: none;
+  color: var(--muted);
+  font-style: italic;
+  padding: 1rem 0;
+}
+
+/* --------------------------------------------------------------------------
+   Archive
+   -------------------------------------------------------------------------- */
+
+.archive-year {
+  margin-bottom: 1.75rem;
+}
+
+.archive-year h2 {
+  font-size: 1.3rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.3rem;
+}
+
+.archive-issue {
+  background: var(--gray);
+  border: 1px solid var(--border);
+  padding: 0.9rem 1.1rem;
+  margin-top: 0.6rem;
+}
+
+.archive-issue h3 { margin: 0 0 0.25rem; font-size: 1.05rem; }
+.archive-issue p { margin: 0; font-size: 0.9rem; color: var(--muted); }
+
+/* --------------------------------------------------------------------------
+   Article landing page
+   -------------------------------------------------------------------------- */
+
+.article-header {
+  border-bottom: 2px solid var(--green);
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.article-title {
+  font-size: 1.7rem;
+  margin: 0.4rem 0 0.7rem;
+}
+
+.article-authors {
+  font-size: 1rem;
+  margin: 0 0 0.2rem;
+}
+
+.article-affiliation {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.article-dates {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.7rem;
+}
+
+.abstract-box {
+  background: var(--gray);
+  border-left: 4px solid var(--green);
+  padding: 1.1rem 1.3rem;
+  margin: 1.25rem 0;
+}
+
+.abstract-box h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.keywords {
+  font-size: 0.92rem;
+}
+
+.citation-box {
+  border: 1px solid var(--border);
+  background: var(--white);
+  padding: 1rem 1.2rem;
+  margin: 1.25rem 0;
+  font-size: 0.92rem;
+}
+
+.citation-box h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+}
+
+/* --------------------------------------------------------------------------
+   Announcements, cards, tables
+   -------------------------------------------------------------------------- */
+
+.announcement {
+  border-left: 4px solid var(--navy);
+  background: var(--gray);
+  padding: 0.8rem 1.1rem;
+  margin-bottom: 0.9rem;
+}
+
+.announcement h3 { margin: 0 0 0.25rem; font-size: 1rem; }
+.announcement p { margin: 0; font-size: 0.9rem; }
+.announcement .date { color: var(--muted); font-size: 0.8rem; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.93rem;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.55rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+th { background: var(--gray); }
+
+/* --------------------------------------------------------------------------
+   Editorial board
+   -------------------------------------------------------------------------- */
+
+.board-member {
+  border-bottom: 1px solid var(--border);
+  padding: 0.9rem 0;
+}
+
+.board-member h3 { margin: 0 0 0.2rem; font-size: 1.05rem; }
+.board-member p { margin: 0; font-size: 0.92rem; color: var(--muted); }
+.board-role {
+  font-size: 0.78rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+
+.site-footer {
+  background: var(--navy-dark);
+  color: #cfd6e0;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.4fr;
+  gap: 2rem;
+  padding: 2.25rem 1.25rem;
+}
+
+.site-footer h3 {
+  color: var(--white);
+  font-size: 1rem;
+  margin: 0 0 0.6rem;
+}
+
+.site-footer a { color: #cfd6e0; }
+.site-footer a:hover { color: var(--white); }
+.site-footer p { margin: 0 0 0.4rem; }
+
+.site-footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-footer li { margin-bottom: 0.3rem; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+  padding: 0.9rem 1.25rem;
+  font-size: 0.82rem;
+}
+
+/* --------------------------------------------------------------------------
+   Back to top
+   -------------------------------------------------------------------------- */
+
+#back-to-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: none;
+  border-radius: 3px;
+  background: var(--green);
+  color: var(--white);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none;
+  z-index: 90;
+}
+
+#back-to-top:hover { background: var(--green-dark); }
+#back-to-top.visible { display: block; }
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 860px) {
+  .layout { grid-template-columns: 1fr; }
+
+  .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+
+  .journal-name { font-size: 1.4rem; }
+
+  .nav-toggle { display: block; }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    padding-bottom: 0.5rem;
+  }
+
+  .nav-menu.open { display: flex; }
+
+  .nav-submit { margin-left: 0; }
+}
