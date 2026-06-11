@@ -141,8 +141,8 @@
       canvas.height = H * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       // Keep the garden equally dense on wide desktop screens.
-      maxBranches = Math.max(14, Math.round(W / 85));
-      maxSpores = Math.max(30, Math.round(W / 40));
+      maxBranches = Math.min(28, Math.max(14, Math.round(W / 85)));
+      maxSpores = Math.min(72, Math.max(30, Math.round(W / 40)));
       paintBackground(1);
     };
 
