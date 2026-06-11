@@ -34,7 +34,6 @@ Search the repository for these strings and replace them:
 
 | Placeholder | Where | Replace with |
 |---|---|---|
-| `REPLACE_WITH_EMAIL` | Every page footer + `contact.html` + `submission.html` | Journal contact email |
 | Sample articles | `index.html`, `current-issue.html`, `articles/` | Real articles (or delete until the first acceptance) |
 | `ISSN: pending` | Mastheads and footers | Real ISSN once assigned |
 
