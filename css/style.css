@@ -750,8 +750,8 @@ th { background: var(--gray); }
 @media (max-width: 860px) {
   .home .nav-menu {
     background: rgba(9, 17, 27, 0.96);
-    margin: 0 -1.25rem;
-    padding: 0.5rem 1.25rem;
+    margin: 0 -2rem;
+    padding: 0.5rem 2rem;
   }
 }
 
@@ -777,4 +777,5 @@ th { background: var(--gray); }
   .nav-menu.open { display: flex; }
 
   .nav-submit { margin-left: 0; }
+  .home .nav-submit { margin-left: 0; }
 }
