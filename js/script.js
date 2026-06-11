@@ -118,6 +118,8 @@
 
     var W = 0;
     var H = 0;
+    var maxBranches = 16;
+    var maxSpores = 36;
     var branches = [];
     var spores = [];
     var PALETTE = ["#4caf7d", "#6fc796", "#3d8f8f", "#a3d9ad", "#5d9ec9", "#8bc4a0"];
@@ -138,6 +140,9 @@
       canvas.width = W * dpr;
       canvas.height = H * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      // Keep the garden equally dense on wide desktop screens.
+      maxBranches = Math.max(14, Math.round(W / 85));
+      maxSpores = Math.max(30, Math.round(W / 40));
       paintBackground(1);
     };
 
@@ -220,13 +225,13 @@
         }
       }
 
-      if (branches.length < 16 && Math.random() < 0.08) {
+      if (branches.length < maxBranches && Math.random() < 0.1) {
         spawnBranch(null);
       }
     };
 
     var stepSpores = function () {
-      while (spores.length < 36) {
+      while (spores.length < maxSpores) {
         spores.push({
           x: Math.random() * W,
           y: H + Math.random() * H * 0.3,
