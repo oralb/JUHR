@@ -46,9 +46,9 @@ a { color: var(--navy); }
 a:hover { color: var(--green); }
 
 .container {
-  max-width: 1080px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1.25rem;
+  padding: 0 2rem;
 }
 
 /* --------------------------------------------------------------------------
@@ -159,8 +159,8 @@ a:hover { color: var(--green); }
 
 .layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 300px;
-  gap: 2.5rem;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 3.5rem;
 }
 
 .page-title {
@@ -616,6 +616,13 @@ th { background: var(--gray); }
 
 .home .nav-menu { justify-content: flex-end; }
 
+/* On the homepage the brand sits left and all links align right; the auto
+   margin (used by inner pages to push Submit right) would otherwise leave a
+   dead gap between the links and the Submit button on wide screens. */
+.home .nav-submit { margin-left: 0.75rem; }
+
+.home .nav-menu a { padding: 0.85rem 0.95rem; }
+
 .hero {
   position: relative;
   height: 100vh;
@@ -653,7 +660,7 @@ th { background: var(--gray); }
 
 .hero-title {
   font-family: var(--sans);
-  font-size: clamp(3rem, 9vw, 5.5rem);
+  font-size: clamp(3rem, 9vw, 6.5rem);
   font-weight: 800;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -664,7 +671,7 @@ th { background: var(--gray); }
 
 .hero-sub {
   font-family: var(--serif);
-  font-size: clamp(1rem, 2.4vw, 1.35rem);
+  font-size: clamp(1rem, 2.4vw, 1.55rem);
   color: rgba(255, 255, 255, 0.92);
   margin: 0.75rem 0 0.25rem;
 }
